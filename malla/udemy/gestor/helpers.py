@@ -1,0 +1,17 @@
+# Funciones de ayuda
+from cgitb import text
+import os
+import platform
+
+def clear():
+    if platform.system() == "Windows":
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
+def input_text(min_lenght, max_length):
+    while True:
+        text = input("> ")
+        if len(text) >= min_lenght and len(text) <= max_length:
+            return text
